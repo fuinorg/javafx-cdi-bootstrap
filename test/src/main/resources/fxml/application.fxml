@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+
+<VBox fx:controller="org.fuin.fxcdibootstrap.example.FxCdiExampleContoller" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="labelOne" text="%label-one-text" />
+      <Button fx:id="buttonOne" text="%button-one-text" onAction="#onButtonOneClick" />
+   </children>
+</VBox>
