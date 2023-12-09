@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.perdoctus.fx</groupId>
+    <parent>
+        <groupId>org.fuin</groupId>
+        <artifactId>pom</artifactId>
+        <version>1.8.0</version>
+        <relativePath />
+    </parent>
+
     <artifactId>javafx-cdi-bootstrap</artifactId>
-    <version>2.0.1-SNAPSHOT</version>
+    <version>3.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <name>Contexts and Dependency Injection for JavaFX</name>
-    <description>A library that allows you to use "Contexts and Dependency Injection" in JavaFX applications.
-    </description>
-    <url>https://github.com/cgiesche/javafx-cdi-bootstrap</url>
+    <description>A library that allows you to use Contexts and Dependency
+        Injection (CDI) in JavaFX applications.</description>
+    <url>https://github.com/fuinorg/javafx-cdi-bootstrap</url>
 
-    <organization>
-        <name>Christoph Giesche</name>
-        <url>http://www.cgidev.de</url>
-    </organization>
-    <inceptionYear>2016</inceptionYear>
+    <properties>
+        <maven.compiler.release>17</maven.compiler.release>
+        <java.version>17</java.version>
+    </properties>
 
     <developers>
         <developer>
@@ -24,146 +32,36 @@
             <organization>CGIDEV</organization>
             <organizationUrl>http://www.cgidev.de</organizationUrl>
         </developer>
+        <developer>
+            <name>Michael Schnell</name>
+            <organizationUrl>https://github.com/fuinorg</organizationUrl>
+        </developer>
     </developers>
 
     <licenses>
         <license>
-            <name>MIT-License</name>
-            <url>https://opensource.org/licenses/MIT</url>
+            <name>Apache-2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
+            <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
 
     <scm>
-        <url>https://github.com/cgiesche/javafx-cdi-bootstrap.git</url>
-        <connection>scm:git:git@github.com:cgiesche/javafx-cdi-bootstrap.git</connection>
-        <developerConnection>scm:git:git@github.com:cgiesche/javafx-cdi-bootstrap.git</developerConnection>
-      <tag>HEAD</tag>
-  </scm>
+        <url>https://github.com/fuinorg/javafx-cdi-bootstrap/</url>
+        <connection>scm:git:git://github.com/fuinorg/javafx-cdi-bootstrap.git</connection>
+        <developerConnection>
+            scm:git:git@github.com:fuinorg/javafx-cdi-bootstrap.git</developerConnection>
+    </scm>
 
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
-        </repository>
-    </distributionManagement>
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/fuinorg/javafx-cdi-bootstrap/issues</url>
+    </issueManagement>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.0</version>
-                    <configuration>
-                        <source>1.8</source>
-                        <target>1.8</target>
-                        <encoding>UTF-8</encoding>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-
-        <plugins>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>1.16</version>
-                <configuration>
-                    <verbose>false</verbose>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>first</id>
-                        <goals>
-                            <goal>update-file-header</goal>
-                        </goals>
-                        <phase>process-sources</phase>
-                        <configuration>
-                            <licenseName>mit</licenseName>
-                            <roots>
-                                <root>src/main/java</root>
-                                <root>src/test/java</root>
-                            </roots>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
-    <profiles>
-        <profile>
-            <id>release</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.6</version>
-                        <executions>
-                            <execution>
-                                <id>sign-artifacts</id>
-                                <phase>verify</phase>
-                                <goals>
-                                    <goal>sign</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-source-plugin</artifactId>
-                        <version>3.0.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-sources</id>
-                                <goals>
-                                    <goal>jar-no-fork</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>3.0.1</version>
-                        <executions>
-                            <execution>
-                                <id>attach-javadocs</id>
-                                <goals>
-                                    <goal>jar</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
-
-    <dependencies>
-        <!-- CDI 2.0 API -->
-        <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <version>2.0.SP1</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- JAVA FX -->
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>11-ea+25</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+    <modules>
+        <module>library</module>
+        <module>test</module>
+    </modules>
 
 </project>
