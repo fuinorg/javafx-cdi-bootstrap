@@ -31,6 +31,7 @@ public abstract class FxCdiApplication {
 	 * already running when this method is called.
 	 */
 	public void init() {
+		// May be overwritten by implementor
 	}
 
 	/**
@@ -51,6 +52,7 @@ public abstract class FxCdiApplication {
 	 * right after).
 	 */
 	public void stop() {
+		// May be overwritten by implementor
 	}
 
 }
