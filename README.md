@@ -22,7 +22,7 @@ If you are using Maven you can archive this by adding the following dependency t
 <dependency>
     <groupId>org.fuin</groupId>
     <artifactId>javafx-cdi-bootstrap-library</artifactId>
-    <version>3.0.0-SNAPSHOT</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 

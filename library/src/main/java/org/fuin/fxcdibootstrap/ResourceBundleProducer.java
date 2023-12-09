@@ -25,18 +25,7 @@ import jakarta.enterprise.inject.spi.InjectionPoint;
 
 /**
  * Creates Resource bundles that can be injected via CDI.
- * 
- * Here is an example on how to use it in the controller:
- * <pre>
- * public class Controller {
- *     
- *   @Inject
- *   @Bundle("resourceBundles/LoginDialog")
- *   private ResourceBundle rb;
- *   
- *}   
- * </pre>
- * 
+ *
  * @author Christoph Giesche, Michael Schnell
  */
 @ApplicationScoped

@@ -28,25 +28,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.JavaFXBuilderFactory;
 
 /**
- * Creates CDI instances of FXML loaders. This allows injecting the FXML loader via CDI.<br>
- * <br>
- * Here is an example on how to use it in the start method:
- * <pre>
- * public class Main extends FxCdiApplication {
- * 
- *   @Inject
- *   @Bundle("bundles/Application")
- *   private final FXMLLoader fxmlLoader;
- *   
- *   public void start(final Stage stage, final Application.Parameters parameters) throws Exception {
- *      final Parent mainWindow = fxmlLoader.load(getClass().getResourceAsStream("application.fxml"));
- *      final Scene scene = new Scene(mainWindow);
- *      stage.setScene(scene);
- *      stage.show();
- *   }
- *   
- *}
- * </pre>
+ * Creates CDI instances of FXML loaders. This allows injecting the FXML loader via CDI.
  * 
  * @author Christoph Giesche, Michael Schnell
  */

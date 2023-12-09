@@ -28,6 +28,8 @@ import java.lang.annotation.Target;
 import jakarta.enterprise.util.Nonbinding;
 
 /**
+ * Marks point of injection for a bundle.
+ *
  * @author Christoph Giesche
  */
 @Retention(RUNTIME)
@@ -36,6 +38,8 @@ public @interface Bundle {
 
 	/**
 	 * The name of the bundle.
+	 *
+	 * @return Resource path and name.
 	 */
 	@Nonbinding
 	String value();
