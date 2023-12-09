@@ -7,7 +7,7 @@
     <parent>
         <groupId>org.fuin</groupId>
         <artifactId>javafx-cdi-bootstrap</artifactId>
-        <version>3.0.0</version>
+        <version>3.0.1</version>
         <relativePath>..</relativePath>
     </parent>
 
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>org.fuin</groupId>
             <artifactId>javafx-cdi-bootstrap-library</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1</version>
         </dependency>
 
 
